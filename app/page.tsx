@@ -261,7 +261,7 @@ export default function Home() {
             </div>
             <div>
               <h1 className="text-sm font-black text-ink-800 leading-tight">نظام الإنتاجية</h1>
-              <p className="text-[10px] text-ink-400 leading-tight">Ahmed Faris · مركّز اليوم</p>
+              <p className="text-[10px] text-ink-400 leading-tight">مركّز · منظّم · منتج</p>
             </div>
           </div>
           <button
@@ -456,6 +456,22 @@ export default function Home() {
         onImport={handleImport}
         notificationStatus={notifStatus}
       />
+      {/* About Footer */}
+      <div className="mt-16 mb-4 max-w-3xl mx-auto px-4">
+        <div className="rounded-2xl border border-ink-100 px-5 py-4 text-center" style={{ background: "rgba(255,255,255,0.6)" }}>
+          <div className="flex items-center justify-center gap-2 mb-1">
+            <div className="w-6 h-6 rounded-lg bg-ink-800 flex items-center justify-center">
+              <Sparkles className="w-3 h-3 text-accent" />
+            </div>
+            <span className="text-xs font-black text-ink-800">نظام الإنتاجية</span>
+          </div>
+          <p className="text-[11px] text-ink-500 leading-relaxed">
+            تم تطوير هذا التطبيق بواسطة{" "}
+            <span className="font-bold text-ink-700">Ahmed Faris</span>
+          </p>
+          <p className="text-[10px] text-ink-400 mt-0.5">جميع الحقوق محفوظة © {new Date().getFullYear()}</p>
+        </div>
+      </div>
     </div>
   );
 }
