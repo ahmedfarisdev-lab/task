@@ -23,7 +23,7 @@ interface Props {
   onMoveEvent?: (id: string, newStartTime: string) => void;
 }
 
-const START_HOUR = 6;
+const START_HOUR = 0;
 const END_HOUR = 23;
 const HOUR_HEIGHT = 64;
 
