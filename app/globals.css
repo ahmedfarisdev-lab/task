@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #F7F6F2;
+  --surface: #FFFFFF;
+  --ink: #1A1814;
+  --ink-soft: #5C5444;
+  --line: rgba(26, 24, 20, 0.08);
+  --accent: #E8A87C;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  direction: rtl;
+  font-feature-settings: "ss01", "cv01";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: "Cairo", system-ui, sans-serif;
+  background-image:
+    radial-gradient(circle at 20% 0%, rgba(232, 168, 124, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 80% 100%, rgba(168, 181, 160, 0.06) 0%, transparent 40%);
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+::selection {
+  background: var(--accent);
+  color: #1A1814;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(26, 24, 20, 0.15);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(26, 24, 20, 0.3);
+}
+
+/* Number tabular */
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Subtle paper texture */
+.paper {
+  background-image:
+    repeating-linear-gradient(0deg, rgba(26, 24, 20, 0.015) 0, rgba(26, 24, 20, 0.015) 1px, transparent 1px, transparent 2px);
+}
+
+/* Animated dot */
+@keyframes ping-slow {
+  0% { transform: scale(1); opacity: 1; }
+  75%, 100% { transform: scale(2.5); opacity: 0; }
+}
+.dot-ping {
+  position: relative;
+}
+.dot-ping::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: currentColor;
+  animation: ping-slow 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* Range slider */
+input[type="range"].slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 4px;
+  background: rgba(26, 24, 20, 0.1);
+  border-radius: 999px;
+  outline: none;
+}
+input[type="range"].slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  background: var(--ink);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+input[type="range"].slider::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+
+/* Btn ripple base */
+.btn-base {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.18s ease;
+}
+.btn-base:active {
+  transform: scale(0.97);
+}
+
+/* Focus ring */
+.focus-ring:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Glass card */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+/* Confetti micro-celebration */
+@keyframes pop {
+  0% { transform: scale(0.8); opacity: 0; }
+  50% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.pop-in {
+  animation: pop 0.3s ease-out;
+}
