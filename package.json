@@ -5,6 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "serve": "npx serve out -p 3000",
+    "preview": "next build && npx serve out -p 3000",
     "start": "next start",
     "lint": "next lint"
   },
